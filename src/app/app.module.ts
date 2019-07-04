@@ -10,8 +10,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeroComponent } from './components/hero/hero.component';
 
-// import { ScrollToModule } from 'ng2-scroll-to-el';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +20,7 @@ import { HeroComponent } from './components/hero/hero.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    // ScrollToModule.forRoot()
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

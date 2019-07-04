@@ -1,7 +1,7 @@
 {
-  "name": "iath-app",
-  "short_name": "iath-app",
-  "theme_color": "#1976d2",
+  "name": "IamTravisHall(dot)com | UX/UI Design Portfolio of Travis Hall",
+  "short_name": "IamTravisHall(dot)com",
+  "theme_color": "#111111",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
