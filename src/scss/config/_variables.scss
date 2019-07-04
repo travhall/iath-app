@@ -1,0 +1,102 @@
+@import url('https://rsms.me/inter/inter.css');
+:root {
+  --baseline--unit: 1rem;
+
+  // Colors
+  --global--color--primary:     #168683;
+  --global--color--secondary:   #d4af37;
+  --global--color--tertiary:    #999779;
+
+  --global--color--black:       #111;
+  --global--color--greyDk:      #5A5D60;
+  --global--color--greyLt:      #A1AAAA;
+
+  --global--color--success:     #09d42e;
+  --global--color--warning:     #efe705;
+  --global--color--error:       #c84242;
+
+  --global--color--bg:          var(--global--color--black);
+  --global--color--txt:         white;
+
+  // Typography
+  --global--fontFamily:       'Inter',Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
+  --global--fontHeading:      'Zilla Slab', sans-serif;
+
+  // Line Height
+  --lineHeight--sm:            1.125;
+  --lineHeight--base:          1.333;
+  --lineHeight--lg:            1.666;
+  --lineHeight--xl:            1.999;
+
+    // Font Sizes
+  --global--fontSize--base:     calc(var(--baseline--unit)*.8);  // Mobile First Typescale
+  --global--fontSize--heading:  calc(var(--global--fontSize--base)*1.125);
+
+  --global--fontSize--p:        calc(var(--global--fontSize--base));
+  --global--fontSize--sm:       calc(var(--global--fontSize--base)*.85);
+  --global--fontSize--lg:       calc(var(--global--fontSize--base)*1.5);
+  --global--fontSize--xl:       calc(var(--global--fontSize--base)*2);
+
+  --global--fontSize--h1:       calc(var(--global--fontSize--heading) * 4.209);
+  --global--fontSize--h2:       calc(var(--global--fontSize--heading) * 3.157);
+  --global--fontSize--h3:       calc(var(--global--fontSize--heading) * 2.369);
+  --global--fontSize--h4:       calc(var(--global--fontSize--heading) * 1.777);
+  --global--fontSize--h5:       calc(var(--global--fontSize--heading) * 1.333);
+  --global--fontSize--h6:       var(--global--fontSize--heading);
+
+    // Font weight
+  --global--fontWeight--light:    100;
+  --global--fontWeight--base:     300;
+  --global--fontWeight--bold:     700;
+  --global--fontWeight--heavy:    900;
+
+  // Spacers
+  --spacer--xs:   calc(var(--baseline--unit)*.25);
+  --spacer--sm:   calc(var(--baseline--unit)*.5);
+  --spacer--base: var(--baseline--unit);
+  --spacer--lg:   calc(var(--baseline--unit)*2);
+  --spacer--xl:   calc(var(--baseline--unit)*3);
+
+}
+
+@media (min-width: 20rem) {
+  :root {
+    --global--fontSize--base: calc(var(--baseline--unit)*.925);
+  }
+}
+
+@media (min-width: 35rem) {
+  :root {
+    --global--fontSize--base: var(--baseline--unit);
+  }
+}
+
+// @media (min-width: 47rem) {
+//   :root {
+
+//   }
+// }
+
+// @media (min-width: 62rem) {
+//   :root {
+
+//   }
+// }
+
+// @media (min-width: 75rem) {
+//   :root {
+
+//   }
+// }
+
+@media (min-width: 100rem) {
+  :root {
+
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --global--fontFamily: 'Inter var',Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
+  }
+}

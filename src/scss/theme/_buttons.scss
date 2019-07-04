@@ -1,0 +1,89 @@
+@mixin button-reset {
+  appearance: none;
+  background-color: var(--global--color--primary);
+  border: 1px solid var(--global--color--primary);
+  border-radius: 3em;
+  display: inline-block;
+  font-weight: var(--global--fontWeight--base);
+  font-family: var(--global--fontFamily);
+  color: white;
+  letter-spacing: 2px;
+  line-height: var(--lineHeight--sm);
+  margin: 3px;
+  padding: var(--spacer--sm) var(--spacer--base);
+  text-align: center;
+  text-decoration: none;
+  transition: background 250ms ease-in-out, transform 150ms ease, color 500ms ease;
+  vertical-align: text-bottom;
+  white-space: nowrap;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+  }
+
+  &:active,
+  &:focus {
+    transform: scale(0.98);
+  }
+}
+
+button,
+input[type=button],
+.btn {
+  @include button-reset;
+  &.-secondary {
+    background-color: var(--global--color--secondary);
+    border-color: var(--global--color--secondary);
+  }
+  &.-tertiary {
+    background-color: var(--global--color--tertiary);
+    border-color: var(--global--color--tertiary);
+  }
+  &.-dk {
+    background-color: mix(black, #168683, 35%);
+    border-color: mix(black, #168683, 35%);
+  }
+  &.-lt {
+    background-color: mix(white, #168683, 35%);
+    border-color: mix(white, #168683, 35%);
+  }
+  &.-greyDk {
+    background-color: var(--global--color--greyDk);
+    border-color: var(--global--color--greyDk);
+  }
+  &.-greyLt {
+    background-color: var(--global--color--greyLt);
+    border-color: var(--global--color--greyLt);
+  }
+
+  &.-success {
+    background-color: var(--global--color--success);
+    border-color: var(--global--color--success);
+  }
+  &.-warning {
+    background-color: var(--global--color--warning);
+    border-color: var(--global--color--warning);
+    color: var(--global--color--black);
+  }
+  &.-error {
+    background-color: var(--global--color--error);
+    border-color: var(--global--color--error);
+  }
+  &.-ghost {
+    background-color: transparent;
+    border-color: white;
+  }
+
+  &.-block {
+    display: block;
+    width: 100%;
+    @include breakpoint('medium') {
+      display: inline-block;
+      width: auto;
+    }
+  }
+  .icon {
+    margin: -.5rem -.325rem -.5rem 0;
+  }
+}

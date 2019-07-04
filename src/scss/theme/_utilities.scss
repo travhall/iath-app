@@ -1,0 +1,56 @@
+//UTILITIES
+.hide {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.-mobileOnly {
+  @include breakpoint("medium") {
+    display: none;
+  }
+}
+
+.-tabletUp {
+  display: none;
+  @include breakpoint("medium") {
+    display: block;
+  }
+}
+
+.-desktopOnly {
+  display: none;
+  @include breakpoint("large") {
+    display: block;
+  }
+}
+
+.-fixedPos {
+  overflow: hidden;
+  height: 100%;
+  @include breakpoint("medium") {
+    overflow: auto;
+  }
+}
+
+.-blurred {
+  filter: blur(3px);
+  transition: transform 0.5s, filter 0.5s;
+}
+
+.-leftAlign {
+  text-align: left;
+}
+
+.-centerAlign {
+  text-align: center;
+}
+
+.-rightAlign {
+  text-align: right;
+}

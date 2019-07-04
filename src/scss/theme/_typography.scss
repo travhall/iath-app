@@ -1,0 +1,120 @@
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+  font-family: var(--global--fontHeading);
+  font-weight: var(--global--fontWeight--base);
+  line-height: calc(var(--lineHeight--sm)*.8);
+  margin: 0 0 calc(var(--spacer--lg));
+}
+
+h1,
+.h1 {
+  font-size: var(--global--fontSize--h1);
+}
+
+h2,
+.h2 {
+  font-size: var(--global--fontSize--h2);
+}
+
+h3,
+.h3 {
+  font-size: var(--global--fontSize--h3);
+}
+
+h4,
+.h4 {
+  font-size: var(--global--fontSize--h4);
+}
+
+h5,
+.h5 {
+  font-size: var(--global--fontSize--h5);
+}
+
+h6,
+.h6 {
+  font-size: var(--global--fontSize--h6);
+}
+
+.lead {
+  font-size: calc(var(--global--fontSize--p)*1.375); // 22px
+  line-height: var(--lineHeight--sm);
+}
+
+p {
+  font-size: var(--global--fontSize--p);
+  line-height: var(--lineHeight--lg);
+  margin: 0 0 calc(var(--spacer--base));
+
+  +button,
+  +input[type='button'],
+  +.btn {
+    margin-top: var(--spacer--lg) !important;
+  }
+}
+
+a {
+  color: var(--global--color--secondary);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+blockquote {
+  font-family: var(--global--fontHeading);
+  font-size: var(--global--fontSize--lg);
+  font-style: italic;
+  margin: var(--spacer--sm);
+  padding: var(--spacer--lg) 0;
+  position: relative;
+  text-align: center;
+  @include breakpoint('medium') {
+    margin: var(--spacer--lg);
+    padding: var(--spacer--lg) var(--spacer--xl);
+  }
+
+  &::before,
+  &::after {
+    content: '\2026';
+    color: var(--global--color--tertiary);
+    font-size: var(--global--fontSize--xl);
+    font-weight: var(--global--fontWeight--bold);
+    position: absolute;
+    left: 50%;
+    top: calc(var(--spacer--lg) * -1);
+  }
+
+  &::after {
+    top: auto;
+    bottom: calc(var(--spacer--base) * -1);
+  }
+}
+
+cite {
+  display: block;
+  font-family: var(--global--fontFamily);
+  font-size: var(--global--fontSize--p);
+  font-weight: var(--global--fontWeight--normal);
+  line-height: var(--lineHeight--base);
+  margin: var(--spacer--lg) auto 0;
+}
+
+strong {
+  font-weight: var(--global--fontWeight--heavy);
+}
+b,
+.bold {
+  font-weight: var(--global--fontWeight--bold);
+}
+
+em {
+  color: var(--global--color--secondary);
+}
+
+small {
+  font-size: var(--global--fontSize--sm);
+}

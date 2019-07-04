@@ -1,0 +1,26 @@
+.footer {
+  color: white;
+  padding: var(--spacer--base);
+  .logo {
+    display: block;
+    height: 73px;
+    width: 84px;
+    &:hover {
+      fill: white;
+      opacity: .8;
+    }
+  }
+  svg {
+    fill: white;
+  }
+  a {
+    color: inherit;
+    font-size: var(--global--fontSize--sm);
+    &:hover {
+      color: var(--global--color--secondary);
+      svg {
+        fill: var(--global--color--secondary);
+      }
+    }
+  }
+}
