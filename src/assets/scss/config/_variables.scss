@@ -45,9 +45,9 @@
   --global--fontSize--h6:       var(--global--fontSize--heading);
 
     // Font weight
-  --global--fontWeight--light:    100;
+  --global--fontWeight--light:    200;
   --global--fontWeight--base:     300;
-  --global--fontWeight--bold:     700;
+  --global--fontWeight--bold:     600;
   --global--fontWeight--heavy:    900;
 
   // Spacers
@@ -89,11 +89,11 @@
 //   }
 // }
 
-@media (min-width: 100rem) {
-  :root {
+// @media (min-width: 100rem) {
+//   :root {
 
-  }
-}
+//   }
+// }
 
 @supports (font-variation-settings: normal) {
   :root {

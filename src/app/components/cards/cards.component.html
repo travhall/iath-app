@@ -1,0 +1,17 @@
+<div class="card__container">
+  <div class="card" *ngFor="let project of project"
+  (click)="onSelect(project)"
+  [class.selected]="project === selectedProject">
+    <div class="card__content">
+        <div class="title">{{project.title}}</div>
+        <div class="subtitle">{{project.subtitle}}</div>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngIf="selectedProject">
+
+  <h2>{{selectedProject.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedProject.id}}</div>
+
+</div> -->

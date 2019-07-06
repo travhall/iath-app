@@ -10,7 +10,7 @@
   letter-spacing: 2px;
   line-height: var(--lineHeight--sm);
   margin: 3px;
-  padding: var(--spacer--sm) var(--spacer--base);
+  padding: calc(var(--spacer--sm) * 1.325) calc(var(--spacer--base) * 1.325);
   text-align: center;
   text-decoration: none;
   transition: background 250ms ease-in-out, transform 150ms ease, color 500ms ease;

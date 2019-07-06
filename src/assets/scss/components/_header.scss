@@ -1,0 +1,29 @@
+.header {
+  padding: var(--spacer--base);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  .logo {
+    display: block;
+    margin: var(--spacer--base) auto;
+    height: 83px;
+    width: 100px;
+
+    @include breakpoint('medium') {
+      margin: var(--spacer--sm);
+      position: absolute;
+    }
+    svg {
+      height: 83px;
+      width: 100px;
+      &:hover {
+        transform-style: preserve-3d;
+        transform: perspective(15em) rotateX(-4deg) translateZ(3em);
+      }
+    }
+  }
+  svg {
+    fill: white;
+  }
+}

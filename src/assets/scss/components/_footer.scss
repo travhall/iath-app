@@ -1,0 +1,59 @@
+.footer {
+  color: white;
+  font-weight: var(--global--fontWeight--light);
+  padding: var(--spacer--base);
+  position: relative;
+
+  .logo {
+    svg {
+      display: none;
+      height: 73px;
+      width: 84px;
+      &:hover {
+        fill: white;
+        opacity: .8;
+      }
+      @include breakpoint('medium') {
+        display: inline-block;
+      }
+    }
+    height: 73px;
+    width: 84px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  svg {
+    fill: white;
+  }
+  
+  a {
+    color: inherit;
+    display: inline-block;
+    font-size: var(--global--fontSize--sm);
+    &:hover {
+      color: var(--global--color--secondary);
+      svg {
+        fill: var(--global--color--secondary);
+      }
+    }
+  }
+
+  li {
+    display: inline-block;
+    padding: var(--spacer--base) var(--spacer--base) var(--spacer--base) 0;
+    @include breakpoint('medium') {
+      float: right;
+      padding: var(--spacer--base) 0 var(--spacer--base) var(--spacer--base);
+    }
+  }
+
+  .copyright {
+    display: block;
+    clear: both;
+    @include breakpoint('medium') {
+      text-align: right;
+    }
+  }
+}

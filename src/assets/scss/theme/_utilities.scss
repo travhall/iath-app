@@ -19,14 +19,14 @@
 .-tabletUp {
   display: none;
   @include breakpoint("medium") {
-    display: block;
+    display: inherit;
   }
 }
 
 .-desktopOnly {
   display: none;
   @include breakpoint("large") {
-    display: block;
+    display: inherit;
   }
 }
 

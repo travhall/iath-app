@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-header',
   template: `
   <header class="header">
-    <a href="" class="" title="">
-      <svg class="logo">
+    <a href="" class="logo" title="">
+      <svg>
         <use xlink:href="assets/icons/def.svg#icon-Logo-Header"></use>
       </svg>
     </a>
@@ -23,7 +23,8 @@ import { Component, OnInit } from '@angular/core';
     </a>-->
 
   </header>
-  `
+  `,
+  styles: []
 })
 export class HeaderComponent implements OnInit {
 
