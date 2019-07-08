@@ -11,7 +11,7 @@
     width: 100px;
 
     @include breakpoint('medium') {
-      margin: var(--spacer--sm);
+      margin: var(--spacer--base);
       position: absolute;
     }
     svg {

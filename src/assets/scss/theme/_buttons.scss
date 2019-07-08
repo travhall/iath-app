@@ -2,14 +2,15 @@
   appearance: none;
   background-color: var(--global--color--primary);
   border: 1px solid var(--global--color--primary);
-  border-radius: 3em;
+  border-radius: 4em;
   display: inline-block;
   font-weight: var(--global--fontWeight--base);
   font-family: var(--global--fontFamily);
   color: white;
+  cursor: pointer;
   letter-spacing: 2px;
   line-height: var(--lineHeight--sm);
-  margin: 3px;
+  margin: 6px 3px;
   padding: calc(var(--spacer--sm) * 1.325) calc(var(--spacer--base) * 1.325);
   text-align: center;
   text-decoration: none;
@@ -19,7 +20,7 @@
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.025);
+    transform: scale(1.125);
   }
 
   &:active,

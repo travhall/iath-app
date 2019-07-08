@@ -45,10 +45,11 @@
   --global--fontSize--h6:       var(--global--fontSize--heading);
 
     // Font weight
-  --global--fontWeight--light:    200;
-  --global--fontWeight--base:     300;
-  --global--fontWeight--bold:     600;
-  --global--fontWeight--heavy:    900;
+  --global--fontWeight--hairline:   100;
+  --global--fontWeight--light:      200;
+  --global--fontWeight--base:       300;
+  --global--fontWeight--bold:       600;
+  --global--fontWeight--heavy:      900;
 
   // Spacers
   --spacer--xs:   calc(var(--baseline--unit)*.25);

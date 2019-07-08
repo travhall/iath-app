@@ -2,7 +2,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
   font-family: var(--global--fontHeading);
   font-weight: var(--global--fontWeight--base);
   line-height: calc(var(--lineHeight--sm)*.8);
-  margin: 0 0 calc(var(--spacer--lg));
+  margin: 0 0 calc(var(--spacer--base));
 }
 
 h1,
@@ -37,6 +37,7 @@ h6,
 
 .lead {
   font-size: calc(var(--global--fontSize--p)*1.375); // 22px
+  font-weight: var(--global--fontWeight--hairline);
   line-height: var(--lineHeight--sm);
 }
 
@@ -48,7 +49,7 @@ p {
   +button,
   +input[type='button'],
   +.btn {
-    margin-top: var(--spacer--sm) !important;
+    margin-top: var(--spacer--sm);
   }
 }
 
@@ -113,6 +114,7 @@ b,
 
 em {
   color: var(--global--color--secondary);
+  font-weight: 500;
 }
 
 small {
