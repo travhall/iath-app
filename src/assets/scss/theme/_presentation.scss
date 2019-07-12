@@ -1,0 +1,14 @@
+.about {
+  // @extend .hero;
+  // &::before {
+  //   top: -40px;
+  //   @include breakpoint("large") {
+  //     height: 160px;
+  //     top: -60px;
+  //   }
+  // }
+  &__container {
+    // @extend .hero__content;
+    max-width: 45rem;
+  }
+}

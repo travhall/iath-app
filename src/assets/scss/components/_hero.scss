@@ -11,7 +11,7 @@
   margin: var(--spacer--base);
   padding: 0;
   position: relative;
-  z-index: -1;
+  z-index: 0;
 
   &::before {
     background-color: var(--global--color--black);
@@ -54,22 +54,20 @@
   }
 
   @include breakpoint("medium") {
-    grid-template-columns: minmax(100px, 1fr) minmax(40%, 48rem) minmax(
-        100px,
-        1fr
-      );
+    grid-template-columns: minmax(100px, 1fr) minmax(40%, 48rem) minmax(100px, 1fr);
   }
 
   @include breakpoint("large") {
-    grid-template-columns: minmax(180px, 1fr) minmax(40%, 48rem) minmax(
-        180px,
-        1fr
-      );
+    grid-template-columns: minmax(180px, 1fr) minmax(40%, 48rem) minmax(180px, 1fr);
   }
 
   &__content {
     align-self: center;
     grid-area: hero__content;
     position: relative;
+  }
+
+  + section {
+    z-index: 10;
   }
 }

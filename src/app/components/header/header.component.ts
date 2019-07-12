@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-header',
   template: `
   <header class="header">
-    <a href="" class="logo" title="">
+    <a href="" class="logo" title="" [routerLink]="['/']">
       <svg>
         <use xlink:href="assets/icons/def.svg#icon-Logo-Header"></use>
       </svg>

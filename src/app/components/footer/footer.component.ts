@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-footer',
   template: `
   <footer class="footer">
-    <a href="" class="logo" title="">
+    <a href="" class="logo" title="" [routerLink]="['/']">
       <svg class="">
         <use xlink:href="assets/icons/def.svg#icon-Logo-Footer"></use>
       </svg>

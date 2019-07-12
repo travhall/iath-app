@@ -1,7 +1,7 @@
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
   font-family: var(--global--fontHeading);
   font-weight: var(--global--fontWeight--base);
-  line-height: calc(var(--lineHeight--sm)*.8);
+  line-height: var(--lineHeight--sm);
   margin: 0 0 calc(var(--spacer--base));
 }
 
@@ -38,7 +38,6 @@ h6,
 .lead {
   font-size: calc(var(--global--fontSize--p)*1.375); // 22px
   font-weight: var(--global--fontWeight--hairline);
-  line-height: var(--lineHeight--sm);
 }
 
 p {
@@ -62,6 +61,7 @@ a {
 
   &:hover {
     cursor: pointer;
+    text-decoration: underline;
   }
 }
 
