@@ -18,6 +18,6 @@ export class CardsComponent implements OnInit {
   onSelect(project: Project): void {
     this.selectedProject = project;
     this.change.emit(this.selectedProject);
-    console.log(this.selectedProject);
+    // console.log(this.selectedProject);
   }
 }

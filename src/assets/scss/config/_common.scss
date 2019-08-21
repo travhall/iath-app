@@ -53,9 +53,6 @@ section {
   margin: 0;
   padding: var(--spacer--base);
   position: relative;
-  @include breakpoint('medium') {
-    padding: var(--spacer--lg);
-  }
 }
 
 svg {

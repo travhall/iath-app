@@ -1,0 +1,131 @@
+.about {
+  text-align: center; // center all for mobile
+  margin: var(--spacer--xl) auto;
+
+  .profile {
+    display: grid;
+    grid-template-columns: 1fr 90% 1fr;
+    grid-template-areas:
+      ". profile__img ."
+      ". profile__content .";
+    justify-items: center;
+    margin: var(--spacer--xl) auto;
+
+    @include breakpoint("large") {
+      grid-template-columns: 1fr 1fr 0.5fr minmax(50%, 40rem) 1fr;
+      grid-template-areas: ". profile__img . profile__content .";
+      align-items: end;
+      margin: calc(var(--spacer--xl) * 2) auto var(--spacer--xl);
+    }
+
+    &__img {
+      align-self: end;
+      grid-area: profile__img;
+    }
+
+    &__content {
+      grid-area: profile__content;
+      @include breakpoint("large") {
+        text-align: left;
+      }
+    }
+  }
+
+  .skill {
+    display: grid;
+    grid-template-areas:
+      "icon"
+      "title"
+      "paragraph";
+    margin: 0 auto;
+    padding: var(--spacer--base);
+
+    @include breakpoint("medium") {
+      grid-template-areas:
+        "icon title"
+        "icon paragraph";
+      padding: var(--spacer--base);
+      text-align: left;
+    }
+    @include breakpoint("xlarge") {
+      grid-template-areas:
+        "icon"
+        "title"
+        "paragraph";
+    }
+
+    &:nth-child(1) {
+      grid-area: skill1;
+    }
+    &:nth-child(2) {
+      grid-area: skill2;
+      transition-delay: 125ms;
+      @include breakpoint("medium") {
+        grid-template-areas:
+          "title icon"
+          "paragraph icon";
+        text-align: right;
+      }
+      @include breakpoint("xlarge") {
+        grid-template-areas:
+          "icon"
+          "title"
+          "paragraph";
+        text-align: left;
+      }
+    }
+    &:nth-child(3) {
+      grid-area: skill3;
+      transition-delay: 250ms;
+    }
+
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 90% 1fr;
+      grid-auto-flow: dense;
+      grid-template-areas:
+        ". . ."
+        ". skill1 ."
+        ". . ."
+        ". skill2 ."
+        ". . ."
+        ". skill3 ."
+        ". . .";
+      margin: var(--spacer--lg) auto;
+      max-width: 80rem;
+      @include breakpoint("medium") {
+        grid-template-columns: 1fr 70% 1fr;
+      }
+      @include breakpoint("large") {
+        grid-gap: var(--spacer--base);
+      }
+      @include breakpoint("xlarge") {
+        grid-template-columns: repeat(3, minmax(30%, 1fr));
+        grid-template-areas: "skill1 skill2 skill3";
+        grid-gap: var(--spacer--lg);
+      }
+    }
+
+    .title {
+      @extend .h3;
+      grid-area: title;
+    }
+    .-graphic {
+      align-self: center;
+      grid-area: icon;
+      margin: var(--spacer--lg) auto;
+      height: 64px;
+      width: 122px;
+      @include breakpoint("medium") {
+        margin: var(--spacer--lg);
+      }
+      @include breakpoint("xlarge") {
+        align-self: start;
+        margin: var(--spacer--lg) 0;
+      }
+    }
+    .paragraph {
+      grid-area: paragraph;
+    }
+  }
+}

@@ -1,20 +1,21 @@
-<section class="hero">
+<section class="hero home" id="hero" data-aos="fade-up" data-aos-duration="450" data-aos-anchor-placement="top-center">
   <div class="hero__content">
     <h2 class="title">Hello, I'm Travis &hellip;</h2>
     <h3 class="h4 subtitle">and I enjoy making things for the web.</h3>
     <p>
       In other words,
       <em>I specialize in crafting digital experiences that transform challenges into opportunities</em>. But I'm
-      guessing you're not here to read a bunch of industry jargon
-      &hellip;
+      guessing you're not here to read a bunch of industry jargon, are you? While you're here you read a bit
+      <a href="" [scrollTo]="'#about'" class="" title="">about me</a>, check out <a href="" [scrollTo]="'#projects'"
+        class="" title="">my work</a> or <a href="mailto:hello@iamtravishall.com" class="" title="">get in touch</a>.
     </p>
-    <button class="btn -ghost">
-      Check out my work
+    <button class="btn -white" [scrollTo]="'#projects'">
+      Featured Projects
       <svg class="icon">
         <use xlink:href="assets/icons/def.svg#icon-arrow-down-circle"></use>
       </svg>
     </button>
-    <button class="btn -ghost">
+    <button class="btn -ghost -borderless" [scrollTo]="'#about'">
       Get to know me
       <svg class="icon">
         <use xlink:href="assets/icons/def.svg#icon-arrow-down-circle"></use>
@@ -23,34 +24,11 @@
   </div>
 </section>
 
-<section class="cards">
-  <app-cards></app-cards>
-</section>
+<!-- {{ selectedProject }} -->
 
-<section class="about">
-  <div class="about__container">
-    <h2>Hello again!</h2>
-    <p>
-      Like I said, my name is Travis, and I'm a Denver based designer/developer. I currently lead user experience for
-      Arrow Electronics. Previously, I wrote code for <a href="https://ideapark.com/" target="_blank"
-        title="ideapark">ideapark</a> and <a href="https://www.lacek.com/" target="_blank" title="The Lacek Group">The
-        Lacek Group</a>. I've also worked with agencies like
-      <a href="http://www.mccannmpls.com/" target="_blank" title="McCann">McCann</a>, <a href="https://morsekode.com/"
-        target="_blank" title="Morsekode">Morsekode</a>, and <a href="http://www.playworkgroup.com/" target="_blank"
-        title="playworkgroup">playworkgroup</a>. You don't have to take my word for it, see what others <a href="#"
-        title="Testimonials">have to say</a>, or &hellip;
-    </p>
-    <!-- <button class="btn -ghost">
-        Check out my skills
-        <svg class="icon">
-          <use xlink:href="assets/icons/def.svg#icon-arrow-down-circle"></use>
-        </svg>
-      </button> -->
-    <button class="btn -ghost">
-      Check out my work
-      <svg class="icon">
-        <use xlink:href="assets/icons/def.svg#icon-arrow-up-circle"></use>
-      </svg>
-    </button>
-  </div>
-</section>
+<!-- <app-cards (change)="selectProject($event)"></app-cards> -->
+<app-cards></app-cards>
+
+<app-about></app-about>
+
+<app-testimonials></app-testimonials>

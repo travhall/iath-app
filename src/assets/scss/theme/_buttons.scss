@@ -1,20 +1,22 @@
 @mixin button-reset {
-  appearance: none;
+  -webkit-appearance: none;
   background-color: var(--global--color--primary);
   border: 1px solid var(--global--color--primary);
-  border-radius: 4em;
+  border-radius: 4px;
   display: inline-block;
-  font-weight: var(--global--fontWeight--base);
+  font-size: calc(var(--baseline--unit) * 0.95);
+  font-weight: var(--global--fontWeight--medium);
   font-family: var(--global--fontFamily);
   color: white;
   cursor: pointer;
   letter-spacing: 2px;
   line-height: var(--lineHeight--sm);
-  margin: 6px 3px;
-  padding: calc(var(--spacer--sm) * 1.325) calc(var(--spacer--base) * 1.325);
+  margin: 6px 12px 6px 0;
+  padding: var(--spacer--base);
   text-align: center;
   text-decoration: none;
-  transition: background 250ms ease-in-out, transform 150ms ease, color 500ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    color 500ms ease;
   vertical-align: text-bottom;
   white-space: nowrap;
 
@@ -30,9 +32,10 @@
 }
 
 button,
-input[type=button],
+input[type="button"],
 .btn {
   @include button-reset;
+
   &.-secondary {
     background-color: var(--global--color--secondary);
     border-color: var(--global--color--secondary);
@@ -57,6 +60,11 @@ input[type=button],
     background-color: var(--global--color--greyLt);
     border-color: var(--global--color--greyLt);
   }
+  &.-white {
+    background-color: white;
+    border-color: white;
+    color: var(--global--color--black);
+  }
 
   &.-success {
     background-color: var(--global--color--success);
@@ -75,16 +83,27 @@ input[type=button],
     background-color: transparent;
     border-color: white;
   }
+  &.-borderless {
+    border-color: transparent;
+  }
 
   &.-block {
     display: block;
+    margin: 0 auto;
     width: 100%;
-    @include breakpoint('medium') {
+    .icon {
+      display: none;
+    }
+    @include breakpoint("medium") {
       display: inline-block;
+      margin: 6px 12px 6px 0;
       width: auto;
+      .icon {
+        display: inline-block;
+      }
     }
   }
-  .icon {
-    margin: -.5rem -.325rem -.5rem 0;
+  > .icon {
+    margin: -6px -3px -6px 0;
   }
 }

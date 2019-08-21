@@ -1,12 +1,12 @@
 $breakpoints: ( // BREAKPOINTS : @include breakpoint("medium") {…}
-'xsmall': (min-width: 20rem), // 320px - Tiny phones
-'small': (min-width: 35rem), // 576px - Small tablets and large smartphones
-'medium': (min-width: 47rem), // 752px - Small tablets
-'large': (min-width: 62rem), // 992px - Tablets and small desktops
-'xlarge': (min-width: 75rem), // 1200px - Large tablets and desktops
-'whoa': (min-width: 100rem), // 1600px - Whoa dude that's a pretty big screen
-'landscape': (orientation: landscape), // Landscape mode
-'portrait': (orientation: portrait) // Portrait mode
+'xsmall': (min-width: 20rem),             // 320px - Tiny phones
+'small': (min-width: 37.25rem),           // 596px - Small tablets and large smartphones
+'medium': (min-width: 48.75rem),          // 780px - Small tablets
+'large': (min-width: 64.25rem),           // 1028px - Tablets and small desktops
+'xlarge': (min-width: 74.75rem),          // 1196px - Large tablets and desktops
+'whoa': (min-width: 99.75rem),            // 1596px - Whoa dude that's a pretty big screen
+'landscape': (orientation: landscape),    // Landscape mode
+'portrait': (orientation: portrait)       // Portrait mode
 ) !default;
 
 @mixin breakpoint($breakpoint) {
@@ -14,11 +14,8 @@ $breakpoints: ( // BREAKPOINTS : @include breakpoint("medium") {…}
     @media #{inspect(map-get($breakpoints, $breakpoint))} {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
     +"Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
-

@@ -3,13 +3,14 @@ import { Project } from './project';
 export const PROJECTS: Project[] = [
   {
     id: 6,
-    title: 'Perfecting Site Search',
+    title: 'Enhancing Site Search',
     subtitle: '',
     role: 'UX Design Lead : Arrow Digital',
     date: '2019',
     desc: '',
     tags: '',
-    url: 'perfecting-site-search'
+    url: 'enhancing-site-search',
+    cardImage: '/assets/img/card--img6.jpg',
   },
   {
     id: 5,
@@ -19,17 +20,19 @@ export const PROJECTS: Project[] = [
     date: '2019',
     desc: '',
     tags: '',
-    url: 'crushing-checkout-conversion'
+    url: 'crushing-checkout-conversion',
+    cardImage: '/assets/img/card--img5.jpg',
   },
   {
     id: 4,
-    title: 'Paying Down Design Debt',
+    title: 'Not a Robot',
     subtitle: '',
-    role: 'UX Design Lead : Arrow Digital',
+    role: 'Designer/Developer',
     date: '2019',
     desc: '',
     tags: '',
-    url: 'paying-down-design-debt'
+    url: 'not-a-robot',
+    cardImage: '/assets/img/card--img4.jpg',
   },
   {
     id: 3,
@@ -39,7 +42,8 @@ export const PROJECTS: Project[] = [
     date: '2019',
     desc: '',
     tags: '',
-    url: 'jane-rae-interiors'
+    url: 'jane-rae-interiors',
+    cardImage: '/assets/img/card--img3.jpg',
   },
   {
     id: 2,
@@ -49,7 +53,8 @@ export const PROJECTS: Project[] = [
     date: '2010 - 2018',
     desc: '',
     tags: '',
-    url: 'past-development-projects'
+    url: 'past-development-projects',
+    cardImage: '/assets/img/card--img2.jpg',
   },
   {
     id: 1,
@@ -59,6 +64,7 @@ export const PROJECTS: Project[] = [
     date: '2010 - 2018',
     desc: '',
     tags: '',
-    url: 'past-design-projects'
-   }
+    url: 'past-design-projects',
+    cardImage: '/assets/img/card--img1.jpg',
+  }
 ];

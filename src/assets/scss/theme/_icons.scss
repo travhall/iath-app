@@ -10,8 +10,13 @@
   vertical-align: middle;
 
   &.-sm {
-    height: calc(var(--spacer--sm)*1.25);
-    width: calc(var(--spacer--sm)*1.25);
+    height: calc(var(--spacer--sm) * 1.25);
+    width: calc(var(--spacer--sm) * 1.25);
+  }
+
+  &.-md {
+    width: calc(var(--spacer--base) * 1.25);
+    height: calc(var(--spacer--base) * 1.25);
   }
 
   &.-lg {

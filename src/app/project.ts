@@ -7,4 +7,5 @@ export class Project {
   desc: string;
   tags: any;
   url: string;
+  cardImage: string;
 }

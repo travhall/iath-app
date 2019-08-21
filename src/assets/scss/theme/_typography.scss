@@ -1,4 +1,15 @@
-h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: var(--global--fontHeading);
   font-weight: var(--global--fontWeight--base);
   line-height: var(--lineHeight--sm);
@@ -36,24 +47,26 @@ h6,
 }
 
 .lead {
-  font-size: calc(var(--global--fontSize--p)*1.375); // 22px
+  font-size: calc(var(--global--fontSize--p) * 1.375); // 22px
   font-weight: var(--global--fontWeight--hairline);
 }
 
 p {
   font-size: var(--global--fontSize--p);
+  font-weight: var(--global--fontWeight--light);
   line-height: var(--lineHeight--lg);
   margin: 0 0 calc(var(--spacer--base));
 
-  +button,
-  +input[type='button'],
-  +.btn {
+  + button,
+  + input[type="button"],
+  + .btn {
     margin-top: var(--spacer--sm);
   }
 }
 
 a {
   color: var(--global--color--secondary);
+  font-weight: var(--global--fontWeight--medium);
   cursor: pointer;
   position: relative;
   text-decoration: none;
@@ -73,14 +86,14 @@ blockquote {
   padding: var(--spacer--lg) 0;
   position: relative;
   text-align: center;
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin: var(--spacer--lg);
     padding: var(--spacer--lg) var(--spacer--xl);
   }
 
   &::before,
   &::after {
-    content: '\2026';
+    content: "\2026";
     color: var(--global--color--tertiary);
     font-size: var(--global--fontSize--xl);
     font-weight: var(--global--fontWeight--bold);
@@ -114,7 +127,7 @@ b,
 
 em {
   color: var(--global--color--secondary);
-  font-weight: 500;
+  font-weight: var(--global--fontWeight--medium);
 }
 
 small {
