@@ -1,9 +1,13 @@
 .footer {
   color: white;
-  font-weight: var(--global--fontWeight--light);
-  padding: var(--spacer--base);
+  font-weight: var(--fontWeight--hairline);
+  margin: 0 0 calc(var(--spacer--lg) * 2.5); //Space for mobile nav
+  padding: var(--spacer--lg);
   position: relative;
-
+  @include breakpoint("medium") {
+    margin: 0;
+    padding: var(--spacer--base);
+  }
   .logo {
     svg {
       display: none;
@@ -11,9 +15,9 @@
       width: 84px;
       &:hover {
         fill: white;
-        opacity: .8;
+        opacity: 0.8;
       }
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         display: inline-block;
       }
     }
@@ -27,32 +31,38 @@
   svg {
     fill: white;
   }
-  
+
   a {
     color: inherit;
     display: inline-block;
-    font-size: var(--global--fontSize--sm);
+    font-size: var(--fontSize--sm);
+    font-weight: var(--fontWeight--hairline);
     &:hover {
-      color: var(--global--color--secondary);
+      color: var(--color--secondary);
+      text-decoration: none;
       svg {
-        fill: var(--global--color--secondary);
+        fill: var(--color--secondary);
       }
     }
   }
 
   li {
     display: inline-block;
-    padding: var(--spacer--base) var(--spacer--base) var(--spacer--base) 0;
-    @include breakpoint('medium') {
+    margin: 0 var(--spacer--base) var(--spacer--base) 0;
+    padding: 0;
+    &:nth-child(3) {
+      display: block;
+    }
+    @include breakpoint("medium") {
       float: right;
-      padding: var(--spacer--base) 0 var(--spacer--base) var(--spacer--base);
+      margin: var(--spacer--base) 0 var(--spacer--base) var(--spacer--base);
     }
   }
 
   .copyright {
     display: block;
     clear: both;
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       text-align: right;
     }
   }

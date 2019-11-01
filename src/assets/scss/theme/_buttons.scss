@@ -1,12 +1,12 @@
 @mixin button-reset {
   -webkit-appearance: none;
-  background-color: var(--global--color--primary);
-  border: 1px solid var(--global--color--primary);
+  background-color: var(--color--primary);
+  border: 1px solid var(--color--primary);
   border-radius: 4px;
   display: inline-block;
   font-size: calc(var(--baseline--unit) * 0.95);
-  font-weight: var(--global--fontWeight--medium);
-  font-family: var(--global--fontFamily);
+  font-weight: var(--fontWeight--medium);
+  font-family: var(--fontFamily);
   color: white;
   cursor: pointer;
   letter-spacing: 2px;
@@ -15,18 +15,20 @@
   padding: var(--spacer--base);
   text-align: center;
   text-decoration: none;
-  transition: background 250ms ease-in-out, transform 150ms ease,
-    color 500ms ease;
+  transition: all 250ms ease-in-out;
   vertical-align: text-bottom;
   white-space: nowrap;
 
   &:hover {
     cursor: pointer;
+    // font-weight: var(--fontWeight--heavy);
+    text-decoration: none;
     transform: scale(1.05);
   }
 
   &:active,
   &:focus {
+    text-decoration: none;
     transform: scale(0.98);
   }
 }
@@ -37,12 +39,12 @@ input[type="button"],
   @include button-reset;
 
   &.-secondary {
-    background-color: var(--global--color--secondary);
-    border-color: var(--global--color--secondary);
+    background-color: var(--color--secondary);
+    border-color: var(--color--secondary);
   }
   &.-tertiary {
-    background-color: var(--global--color--tertiary);
-    border-color: var(--global--color--tertiary);
+    background-color: var(--color--tertiary);
+    border-color: var(--color--tertiary);
   }
   &.-dk {
     background-color: mix(black, #168683, 35%);
@@ -53,31 +55,31 @@ input[type="button"],
     border-color: mix(white, #168683, 35%);
   }
   &.-greyDk {
-    background-color: var(--global--color--greyDk);
-    border-color: var(--global--color--greyDk);
+    background-color: var(--color--greyDk);
+    border-color: var(--color--greyDk);
   }
   &.-greyLt {
-    background-color: var(--global--color--greyLt);
-    border-color: var(--global--color--greyLt);
+    background-color: var(--color--greyLt);
+    border-color: var(--color--greyLt);
   }
   &.-white {
     background-color: white;
     border-color: white;
-    color: var(--global--color--black);
+    color: var(--color--black);
   }
 
   &.-success {
-    background-color: var(--global--color--success);
-    border-color: var(--global--color--success);
+    background-color: var(--color--success);
+    border-color: var(--color--success);
   }
   &.-warning {
-    background-color: var(--global--color--warning);
-    border-color: var(--global--color--warning);
-    color: var(--global--color--black);
+    background-color: var(--color--warning);
+    border-color: var(--color--warning);
+    color: var(--color--black);
   }
   &.-error {
-    background-color: var(--global--color--error);
-    border-color: var(--global--color--error);
+    background-color: var(--color--error);
+    border-color: var(--color--error);
   }
   &.-ghost {
     background-color: transparent;
@@ -86,7 +88,10 @@ input[type="button"],
   &.-borderless {
     border-color: transparent;
   }
-
+  &.-lg {
+    border-width: 2px;
+    font-size: calc(var(--baseline--unit) * 1.15);
+  }
   &.-block {
     display: block;
     margin: 0 auto;
@@ -104,6 +109,39 @@ input[type="button"],
     }
   }
   > .icon {
-    margin: -6px -3px -6px 0;
+    margin: 0;
+  }
+  .btn-group & {
+    margin: 6px;
+  }
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: false;
+    transform: none;
+  }
+}
+
+.btn-group {
+  margin: var(--spacer--base) auto;
+  max-width: 60rem;
+  padding: var(--spacer--base);
+  text-align: center;
+}
+
+.back-to-top {
+  display: none;
+  padding: 0;
+  margin: 0;
+  @include breakpoint("medium") {
+    display: block;
+    opacity: 0.6 !important;
+    position: fixed;
+    bottom: var(--spacer--base);
+    left: var(--spacer--base);
+    z-index: 200;
+    &:hover {
+      opacity: 1 !important;
+    }
   }
 }

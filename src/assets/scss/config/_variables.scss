@@ -3,58 +3,60 @@
   --baseline--unit: 1rem;
 
   // Colors
-  --global--color--primary: #168683;
-  --global--color--secondary: #d4af37;
-  --global--color--tertiary: #999779;
+  --color--primary: #168683;
+  --color--secondary: #d4af37;
+  --color--tertiary: #999779;
 
-  --global--color--black: #111;
-  --global--color--greyDk: #29272a;
-  --global--color--grey: #5a5d60;
-  --global--color--greyLt: #a1aaaa;
+  --color--black: #111;
+  --color--greyDk: #252525;
+  --color--grey: #5a5d60;
+  --color--greyLt: #a1aaaa;
 
-  --global--color--success: #09d42e;
-  --global--color--warning: #efe705;
-  --global--color--error: #c84242;
+  --color--success: #09d42e;
+  --color--warning: #efe705;
+  --color--error: #c84242;
 
-  --global--color--bg: var(--global--color--black);
-  --global--color--txt: white;
+  --color--bg: var(--color--black);
+  --color--txt: white;
 
   // Typography
-  --global--fontFamily: "Inter", Inter, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  --global--fontHeading: "Zilla Slab", sans-serif;
+  --fontFamily: "Inter", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", sans-serif;
+  --fontHeading: "Zilla Slab", sans-serif;
 
   // Line Height
-  --lineHeight--sm: 1;
+  --lineHeight--xs: 1;
+  --lineHeight--sm: 1.2;
   --lineHeight--base: 1.333;
   --lineHeight--lg: 1.666;
   --lineHeight--xl: 1.999;
 
   // Font Sizes
-  --global--fontSize--base: var(--baseline--unit); // Mobile First Typescale
-  --global--fontSize--heading: calc(var(--global--fontSize--base) * 1.15);
-  --global--fontSize--nav: calc(var(--global--fontSize--base) * 1.1);
+  --fontSize--base: var(--baseline--unit);
+  --fontSize--heading: calc(var(--fontSize--base) * 1.15);
+  --fontSize--nav: calc(var(--fontSize--base) * 1.1);
 
-  --global--fontSize--p: calc(var(--global--fontSize--base));
-  --global--fontSize--sm: calc(var(--global--fontSize--base) * 0.85);
-  --global--fontSize--lg: calc(var(--global--fontSize--base) * 1.5);
-  --global--fontSize--xl: calc(var(--global--fontSize--base) * 2);
+  --fontSize--xs: calc(var(--fontSize--base) * 0.625);
+  --fontSize--sm: calc(var(--fontSize--base) * 0.85);
+  --fontSize--lg: calc(var(--fontSize--base) * 1.5);
+  --fontSize--xl: calc(var(--fontSize--base) * 2);
 
-  --global--fontSize--h1: calc(var(--global--fontSize--heading) * 4.209);
-  --global--fontSize--h2: calc(var(--global--fontSize--heading) * 3.157);
-  --global--fontSize--h3: calc(var(--global--fontSize--heading) * 2.369);
-  --global--fontSize--h4: calc(var(--global--fontSize--heading) * 1.777);
-  --global--fontSize--h5: calc(var(--global--fontSize--heading) * 1.333);
-  --global--fontSize--h6: var(--global--fontSize--heading);
+  --fontSize--h1: calc(var(--fontSize--heading) * 4.209);
+  --fontSize--h2: calc(var(--fontSize--heading) * 3.157);
+  --fontSize--h3: calc(var(--fontSize--heading) * 2.369);
+  --fontSize--h4: calc(var(--fontSize--heading) * 1.777);
+  --fontSize--h5: calc(var(--fontSize--heading) * 1.333);
+  --fontSize--h6: var(--fontSize--heading);
+  --fontSize--p: calc(var(--fontSize--base));
 
   // Font Weights
-  --global--fontWeight--hairline: 100;
-  --global--fontWeight--light: 200;
-  --global--fontWeight--base: 300;
-  --global--fontWeight--medium: 500;
-  --global--fontWeight--bold: 700;
-  --global--fontWeight--heavy: 900;
+  --fontWeight--hairline: 100;
+  --fontWeight--light: 200;
+  --fontWeight--base: 300;
+  --fontWeight--medium: 500;
+  --fontWeight--bold: 700;
+  --fontWeight--heavy: 900;
 
   // Spacers
   --spacer--xs: calc(var(--baseline--unit) * 0.25);
@@ -102,7 +104,7 @@
 
 @supports (font-variation-settings: normal) {
   :root {
-    --global--fontFamily: "Inter var", Inter, -apple-system, BlinkMacSystemFont,
+    --fontFamily: "Inter var", Inter, -apple-system, BlinkMacSystemFont,
       "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   }

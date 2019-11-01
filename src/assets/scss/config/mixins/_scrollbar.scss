@@ -1,5 +1,8 @@
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, $black, 5%)) {
-
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, black, 5%)
+) {
   // Chrome
   ::-webkit-scrollbar {
     width: $size;
@@ -20,6 +23,6 @@
     scrollbar-track-color: $background-color;
   }
 }
-// @include breakpoint('medium') {
-//   @include scrollbars($spacer*.5, #d4af37);
+// @include breakpoint("medium") {
+//   @include scrollbars(calc(var(--spacer--base * 0.5)), #d4af37);
 // }

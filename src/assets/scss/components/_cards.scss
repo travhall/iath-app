@@ -1,121 +1,134 @@
 .card {
-  background: black;
-  border: 1px solid var(--global--color--primary);
   cursor: pointer;
   display: grid;
+  grid-column-end: span 1;
   object-fit: cover;
   overflow: hidden;
-  padding: var(--spacer--base);
   position: relative;
-  transition: all 0.25s ease-in-out;
-  z-index: 9;
-
-  @include breakpoint("small") {
-    grid-column-end: span 1;
-  }
-  @include breakpoint("large") {
-    grid-column-end: span 3;
-    padding: var(--spacer--lg);
-    &:nth-child(4n + 0),
-    &:nth-child(4n + 1) {
-      grid-column-end: span 5;
-    }
-    &:last-child(),
-    &:nth-last-child(-n + 2) {
-      grid-column-end: span 4;
+  z-index: 2;
+  &:hover {
+    .image {
+      filter: blur(0);
+      mix-blend-mode: multiply;
+      transform: scale(1.25) translate(-88.5%, -38.5%);
+      opacity: 0.45;
     }
   }
-  @include breakpoint("xlarge") {
-    grid-column-end: span 5;
-    padding: var(--spacer--xl);
-    &:nth-child(4n + 0),
-    &:nth-child(4n + 1) {
-      grid-column-end: span 7;
-    }
-    &:last-child(),
-    &:nth-last-child(-n + 2) {
-      grid-column-end: span 6;
-    }
-  }
-
-  &:nth-child(even) {
-    transition-delay: 300ms;
-  }
-
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-auto-rows: minmax(420px, 1fr);
-    grid-gap: 0.2rem;
-    grid-auto-flow: dense;
-    max-width: 80rem;
-    margin: var(--spacer--base) auto;
-    @include breakpoint("small") {
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    }
-    @include breakpoint("large") {
-      grid-template-columns: repeat(8, 1fr);
-      grid-auto-rows: minmax(70vh, 1fr);
-      margin: var(--spacer--lg) auto;
-    }
-    @include breakpoint("xlarge") {
-      grid-template-columns: repeat(12, 1fr);
-      margin: var(--spacer--xl) auto;
-    }
-  }
-
-  &__content {
+  .content {
     align-self: end;
-    transition: all 0.5s ease-out;
+    background-image: linear-gradient(rgba(#111, 0), rgba(#111, 0.98));
+    padding: calc(var(--spacer--xl) * 2) var(--spacer--lg) var(--spacer--lg);
+    position: relative;
+    text-shadow: 0 0 2px #111;
     z-index: 2;
-    @include breakpoint("medium") {
-      max-width: 28rem;
+    // .home & {
+    //   max-width: 40rem;
+    // }
+    // .projects & {
+    //   background-image: linear-gradient(rgba(#111, 0), rgba(#111, 0.98));
+    // }
+    .title {
+      font-family: var(--fontHeading);
+      font-size: calc(var(--fontSize--base) * 2.724);
+      line-height: var(--lineHeight--xs);
+      margin: 0 0 var(--spacer--base);
+      .home & {
+        font-size: var(--fontSize--h2);
+        line-height: 0.85;
+        @include breakpoint("medium") {
+          font-size: var(--fontSize--h1);
+        }
+        @include breakpoint("large") {
+          font-size: calc(var(--fontSize--h1) * 1.1);
+        }
+      }
+    }
+    .subtitle {
+      font-size: calc(var(--fontSize--base) * 1.15);
+      font-weight: var(--fontWeight--light);
+    }
+    .date {
+      color: var(--color--secondary);
+      font-weight: var(--fontWeight--heavy);
+      position: absolute;
+      top: 4.5rem;
+    }
+    .role {
+      display: inline-block;
+      font-weight: var(--fontWeight--medium);
+      margin: 0 0 var(--spacer--sm);
+    }
+    .client {
+      display: inline-block;
+      font-weight: var(--fontWeight--light);
+      margin: 0 0 var(--spacer--sm);
     }
   }
-
-  &__image {
+  .image {
+    filter: blur(8px);
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 100%;
+    height: 100%;
+    width: auto;
     object-fit: cover;
-    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    transform: translate(-100%, -50%);
     transform-origin: center center;
     transition: all 0.5s ease-in-out;
+    z-index: -1;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(26.25rem, 40vh);
+    grid-gap: 0.2rem;
+    grid-auto-flow: dense;
+    margin: 0 auto;
+    max-width: 80rem;
+    &.projects {
+      padding: calc(var(--spacer--xl) * 4) var(--spacer--base) var(--spacer--xl);
+      // @include breakpoint("medium") {
+      // grid-template-columns: repeat(8, 1fr);
+      // grid-auto-rows: 60vh;
+      // }
+      @include breakpoint("large") {
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: 70vh;
+      }
+      @include breakpoint("tootall") {
+        grid-auto-rows: 40vh;
+      }
+    }
   }
 
-  .title {
-    color: white;
-    font-size: calc(var(--global--fontSize--base) * 2.724);
-    font-weight: var(--global--fontWeight--heavy);
-    line-height: var(--lineHeight--sm);
-    margin-bottom: var(--spacer--sm);
-  }
-
-  .subtitle {
-    color: white;
-    font-size: calc(var(--global--fontSize--base) * 1.15);
-    font-weight: var(--global--fontWeight--light);
-    margin-bottom: var(--spacer--base);
-  }
-
-  .date {
-    color: var(--global--color--secondary);
-    font-family: var(--global--fontFamily);
-    font-weight: var(--global--fontWeight--heavy);
-    margin-bottom: var(--spacer--sm);
-  }
-
-  .role {
-    font-family: var(--global--fontHeading);
-    margin-bottom: var(--spacer--sm);
-  }
-
-  &:hover {
-    box-shadow: 0 0 8px var(--global--color--secondary);
-    z-index: 10;
-    .card__image {
-      transform: scale(1.25) translate(-38.5%, -38.5%);
-      opacity: 0.45;
+  // Work View Overrides
+  .projects & {
+    // @include breakpoint("medium") {
+    //   grid-column-end: span 4;
+    // grid-column-end: span 3;
+    // &:nth-child(4n + 0),
+    // &:nth-child(4n + 1) {
+    //   grid-column-end: span 5;
+    // }
+    // &:last-child(),
+    // &:nth-last-child(-n + 2) {
+    //   grid-column-end: span 4;
+    // }
+    // }
+    @include breakpoint("large") {
+      grid-column-end: span 5;
+      &:nth-child(4n + 0),
+      &:nth-child(4n + 1) {
+        grid-column-end: span 7;
+      }
+      &:last-child(),
+      &:nth-last-child(-n + 2) {
+        grid-column-end: span 6;
+      }
+    }
+    &:nth-child(even) {
+      transition-delay: 250ms;
     }
   }
 }

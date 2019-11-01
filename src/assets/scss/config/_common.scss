@@ -1,24 +1,27 @@
 html {
   box-sizing: border-box;
-  background-color: var(--global--color--bg);
-  color: var(--global--color--txt);
-  font-family: var(--global--fontFamily);
-  font-weight: var(--global--fontWeight--base);
+  background-color: var(--color--bg);
+  color: var(--color--txt);
+  font-family: var(--fontFamily);
+  font-weight: var(--fontWeight--base);
   line-height: var(--lineHeight--base);
   scroll-behavior: smooth;
 
   @media screen and (prefers-color-scheme: light) {
     background-color: white;
-    color: var(--global--color--black);
+    color: var(--color--black);
   }
 }
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
+html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -42,7 +45,7 @@ ul {
 li {
   padding: var(--spacer--sm) 0;
   span {
-    color: var(--global--color--tertiary);
+    color: var(--color--tertiary);
     font-size: 75%;
     font-style: italic;
     font-weight: 100;
@@ -61,18 +64,18 @@ svg {
 
 ::selection {
   background: white;
-  color: var(--global--color--black);
+  color: var(--color--black);
   text-shadow: none;
 }
 
 ::-moz-selection {
   background: white;
-  color: var(--global--color--black);
+  color: var(--color--black);
   text-shadow: none;
 }
 
 ::-webkit-selection {
   background: white;
-  color: var(--global--color--black);
+  color: var(--color--black);
   text-shadow: none;
 }

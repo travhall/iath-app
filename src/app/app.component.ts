@@ -3,15 +3,23 @@ import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  template: `
+    <app-header></app-header>
+    <div class="site-container">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  `,
 })
 export class AppComponent {
-  title = 'IamTravisHall(dot)com';
+  title = 'iamtravishall.com - Travis Hall UX, UI & Visual Design Professional - Denver | Minneapolis';
+  // tslint:disable-next-line: use-life-cycle-interface
   ngOnInit() {
     AOS.init({
       startEvent: 'load',
       easing: 'ease-out',
-      once: true
+      once: true,
+      // disable: 'mobile',
     });
   }
 }

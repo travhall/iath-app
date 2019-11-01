@@ -1,25 +1,33 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './views/home/home.component';
-import { NotFoundComponent } from './views/not-found/not-found.component';
-import { Project1Component } from './views/projects/project1/project1.component';
-import { Project2Component } from './views/projects/project2/project2.component';
-import { Project3Component } from './views/projects/project3/project3.component';
-import { Project4Component } from './views/projects/project4/project4.component';
-import { Project5Component } from './views/projects/project5/project5.component';
-import { Project6Component } from './views/projects/project6/project6.component';
-// import { ProjectComponent } from './views/project/project.component';
+import { HomeComponent } from './views/home.component';
+import { AboutComponent } from './views/about.component';
+import { CaseStudiesComponent } from './views/case-studies.component';
+import { ContactComponent } from './views/contact.component';
+import { ResumeComponent } from './views/resume.component';
+import { NotFoundComponent } from './views/not-found.component';
+
+import { Project1Component } from './projects/project1/project1.component';
+import { Project2Component } from './projects/project2/project2.component';
+import { Project3Component } from './projects/project3/project3.component';
+import { Project4Component } from './projects/project4/project4.component';
+import { Project5Component } from './projects/project5/project5.component';
+import { Project6Component } from './projects/project6/project6.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    pathMatch: 'full',
-    data: { state: 'Home' }
+    data: { state: 'Home' },
   },
   {
-    path: 'views/projects',
+    path: 'work',
+    component: CaseStudiesComponent,
+    data: { state: 'Work' },
+  },
+  {
+    path: '',
     children: [
       {
         path: 'project6',
@@ -48,6 +56,21 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'about',
+    component: AboutComponent,
+    data: { state: 'About' },
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    data: { state: 'Contact' },
+  },
+  // {
+  //   path: 'resume',
+  //   component: ResumeComponent,
+  //   data: { state: 'Resume' },
+  // },
+  {
     path: '**',
     component: NotFoundComponent,
     data: { state: '404' }
@@ -61,7 +84,7 @@ const routes: Routes = [
       scrollPositionRestoration: 'top',
       enableTracing: true
     }
-    )],
+  )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

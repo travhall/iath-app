@@ -1,0 +1,37 @@
+.project {
+  .content {
+    .subtitle {
+      font-family: var(--fontFamily);
+      font-weight: var(--fontWeight--light);
+    }
+    .date {
+      color: var(--color--secondary);
+      display: block;
+      font-weight: var(--fontWeight--heavy);
+      padding: var(--spacer--sm) var(--spacer--base) var(--spacer--sm) 0;
+      @include breakpoint("medium") {
+        display: inline-block;
+        padding: var(--spacer--base);
+      }
+    }
+    .role {
+      display: inline-block;
+      font-weight: var(--fontWeight--medium);
+      padding: var(--spacer--sm) var(--spacer--sm) var(--spacer--sm) 0;
+    }
+    .client {
+      display: inline-block;
+      font-weight: var(--fontWeight--light);
+      padding: var(--spacer--sm) var(--spacer--base) var(--spacer--sm) 0;
+    }
+  }
+  ~ .panel {
+    display: grid;
+    grid-template-columns: 1fr 90% 1fr;
+    min-height: 100vh;
+    // &:nth-child(odd) {
+    //   background-color: var(--color--greyDk);
+    //   box-shadow: inset 0 0 5px black;
+    // }
+  }
+}

@@ -54,3 +54,7 @@
 .-rightAlign {
   text-align: right;
 }
+
+:focus {
+  outline-color: var(--color--primary);
+}

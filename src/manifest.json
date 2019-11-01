@@ -1,8 +1,8 @@
 {
-  "name": "IamTravisHall(dot)com | UX/UI Design Portfolio of Travis Hall",
-  "short_name": "IamTravisHall(dot)com",
+  "name": "iamtravishall.com - Travis Hall UX, UI & Visual Design Professional - Denver | Minneapolis",
+  "short_name": "iamtravishall.com",
   "theme_color": "#111111",
-  "background_color": "#fafafa",
+  "background_color": "#efefef",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",

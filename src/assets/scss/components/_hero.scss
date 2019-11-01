@@ -1,20 +1,21 @@
-// HERO
 .hero {
+  color: white;
   display: grid;
   grid-template-columns: 1fr 90% 1fr;
-  grid-template-rows: minmax(120px, 1fr) auto minmax(120px, 1fr);
+  grid-template-rows: minmax(150px, 1fr) auto minmax(120px, 1fr);
   grid-template-areas:
     ". . ."
-    ". hero__content ."
+    ". content ."
     ". . .";
-  margin: var(--spacer--base);
+  margin: 0;
+  max-width: 100%;
   min-height: 100vh;
+  overflow: hidden;
   padding: 0;
   position: relative;
   z-index: 0;
-
   &::before {
-    background-color: var(--global--color--black);
+    background-color: var(--color--black);
     content: "";
     display: block;
     height: 80px;
@@ -30,13 +31,15 @@
       bottom: -60px;
     }
   }
-
   &::after {
     background-attachment: fixed;
     background-image: linear-gradient(125deg, #168683, #367067);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     background-blend-mode: multiply;
+    border: var(--spacer--base) solid var(--color--black);
+    box-shadow: inset 0 0 5px black;
     content: "";
     display: block;
     position: absolute;
@@ -46,38 +49,47 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -10;
   }
-
-  @include breakpoint("xsmall") {
-    grid-template-columns: 1fr minmax(60%, 80%) 1fr;
-  }
-
-  @include breakpoint("medium") {
-    grid-template-columns: minmax(100px, 1fr) minmax(40%, 40rem) minmax(
-        100px,
-        1fr
-      );
-  }
-
   @include breakpoint("large") {
-    grid-template-columns: minmax(180px, 1fr) minmax(40%, 47rem) minmax(
-        180px,
+    grid-template-columns: minmax(5rem, 1fr) minmax(40%, 54rem) minmax(
+        5rem,
         1fr
       );
   }
-
-  &__content {
+  // @include breakpoint("tootall") {
+  //   min-height: 60vh;
+  // }
+  > .content {
     align-self: center;
-    grid-area: hero__content;
-    position: relative;
-    p {
-      line-height: var(--lineHeight--xl);
+    grid-area: content;
+    padding: var(--spacer--lg);
+  }
+
+  // Grid Overrides
+  &.about {
+    grid-template-rows: 280px auto 60px;
+    @include breakpoint("medium") {
+      grid-template-columns: minmax(20rem, 30%) minmax(40%, 40rem) minmax(
+          5rem,
+          1fr
+        );
+      grid-template-rows: minmax(150px, 1fr) auto minmax(120px, 1fr);
+    }
+    @include breakpoint("large") {
+      grid-template-columns: minmax(28rem, 30%) minmax(40%, 38rem) minmax(
+          5rem,
+          1fr
+        );
+    }
+    @include breakpoint("tootall") {
+      grid-template-rows: 44vh auto auto;
     }
   }
-
-  + section {
-    z-index: 10;
+  &.contact {
+    @include breakpoint("xlarge") {
+      grid-template-columns: 1fr 60% 1fr;
+    }
   }
 
   // Image Overrides
@@ -92,6 +104,31 @@
     }
     @include breakpoint("large") {
       background-image: url(src/assets/img/home--hero--lg.jpg),
+        linear-gradient(125deg, #164b49, #367067);
+    }
+  }
+  &.about::after {
+    background-image: url(src/assets/img/about--hero--sm.jpg),
+      linear-gradient(125deg, #164b49, #367067);
+    @include breakpoint("medium") {
+      background-image: url(src/assets/img/about--hero--md.jpg),
+        linear-gradient(125deg, #164b49, #367067);
+      background-position: left center;
+    }
+    @include breakpoint("large") {
+      background-image: url(src/assets/img/about--hero--lg.jpg),
+        linear-gradient(125deg, #164b49, #367067);
+    }
+  }
+  &.contact::after {
+    background-image: url(src/assets/img/contact--hero--sm.jpg),
+      linear-gradient(125deg, #164b49, #367067);
+    @include breakpoint("medium") {
+      background-image: url(src/assets/img/contact--hero--md.jpg),
+        linear-gradient(125deg, #164b49, #367067);
+    }
+    @include breakpoint("large") {
+      background-image: url(src/assets/img/contact--hero--lg.jpg),
         linear-gradient(125deg, #164b49, #367067);
     }
   }

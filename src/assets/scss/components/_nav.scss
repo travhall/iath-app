@@ -1,18 +1,44 @@
 .nav {
-  position: absolute;
-  right: var(--spacer--lg);
-  top: var(--spacer--xl);
-  z-index: 25;
+  background: var(--color--black);
+  border-top: 2px solid var(--color--greyDk);
+  bottom: 0;
+  // height: 100%;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+  @include breakpoint("medium") {
+    background: transparent;
+    border-top: none;
+    bottom: auto;
+    position: absolute;
+    right: var(--spacer--lg);
+    top: var(--spacer--lg);
+    width: auto;
+    z-index: 25;
+  }
   &__item {
     display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    @include breakpoint("medium") {
+      &:first-child {
+        display: none;
+      }
+      width: auto;
+    }
   }
   &__link {
     color: white;
-    font-weight: var(--global--fontWeight--light);
+    display: block;
+    font-size: 11px;
+    font-weight: var(--fontWeight--light);
+    margin: 0;
     padding: var(--spacer--base);
-
+    white-space: nowrap;
     &::after {
-      background: var(--global--color--secondary);
+      background: var(--color--secondary);
       bottom: 0;
       content: "";
       color: transparent;
@@ -21,13 +47,24 @@
       left: 0;
       right: 0;
       width: 0;
-      height: 2px;
+      height: 3px;
       transition: all 0.2s ease-in-out;
     }
-    &:hover {
+    &:hover,
+    &.active {
       text-decoration: none;
       &::after {
         width: 40%;
+      }
+    }
+    @include breakpoint("medium") {
+      font-size: var(--fontSize--nav);
+    }
+    .icon {
+      display: block;
+      margin: 0 auto 5px;
+      @include breakpoint("medium") {
+        display: none;
       }
     }
   }
